@@ -28,7 +28,8 @@ namespace _100_Scripts._20_UI
         private void SetSkillUpController()
         {
             SkillUpController = GetComponentInChildren<SkillUpController>();
-            SkillUpController.Initialize();
+            Debug.Assert(SkillUpController != null,"SkillUpController is null");
+            SkillUpController?.Initialize();
         }
         
     }
