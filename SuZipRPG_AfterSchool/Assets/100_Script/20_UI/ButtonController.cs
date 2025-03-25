@@ -10,6 +10,7 @@ public class ButtonController : MonoBehaviour
     public void Initialize()
     {
         TargetButton = GetComponent<Button>();
+        TargetButtonImage = GetComponent<Image>();
     }
 
     public void SetButtonAction(UnityAction action)

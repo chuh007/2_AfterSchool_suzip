@@ -1,16 +1,18 @@
 using UnityEngine;
 using System.Collections.Generic;
+using _100_Script._20_UI;
 using ClassDefine;
 
 public class DeckController : MonoBehaviour, IUI
 {
     public ButtonController CloseButton;
+    
     public ButtonController[] SkillUpButtonArray = new ButtonController[5];
 
     public TextView[] TextViewArray = new TextView[9];
 
     public LevelUpController LevelUpController;
-
+    
     public void Initialize()
     {
         CloseButton.Initialize();
@@ -27,10 +29,7 @@ public class DeckController : MonoBehaviour, IUI
                 UI.SkillUpController.Open();
             });
         }
-
-        LevelUpController = transform.GetComponentInChildren<LevelUpController>();
-        LevelUpController.Initialize();
-
+        LevelUpController
         Open();
     }
 
