@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 108605396}
   - component: {fileID: 108605398}
   - component: {fileID: 108605397}
+  - component: {fileID: 108605399}
   m_Layer: 5
   m_Name: InventoryConsumeController
   m_TagString: Untagged
@@ -521,6 +522,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 108605395}
   m_CullTransparentMesh: 1
+--- !u!114 &108605399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 108605395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3b6f1ab4514ebeb957432faaaa32db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonControllerArray:
+  - {fileID: 840168783}
+  - {fileID: 1096441341}
+  - {fileID: 1843705116}
+  TextViewArray:
+  - {fileID: 1906034923}
+  - {fileID: 1330553581}
+  - {fileID: 0}
 --- !u!1 &111166007
 GameObject:
   m_ObjectHideFlags: 0
@@ -7615,6 +7636,7 @@ GameObject:
   - component: {fileID: 1330553578}
   - component: {fileID: 1330553580}
   - component: {fileID: 1330553579}
+  - component: {fileID: 1330553581}
   m_Layer: 5
   m_Name: DescriptionText
   m_TagString: Untagged
@@ -7680,6 +7702,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330553577}
   m_CullTransparentMesh: 1
+--- !u!114 &1330553581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330553577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 156566352df03674db224e3a9b74452a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mText: {fileID: 0}
 --- !u!1 &1333766227
 GameObject:
   m_ObjectHideFlags: 0
@@ -12361,6 +12396,7 @@ GameObject:
   - component: {fileID: 1906034920}
   - component: {fileID: 1906034922}
   - component: {fileID: 1906034921}
+  - component: {fileID: 1906034923}
   m_Layer: 5
   m_Name: NameText
   m_TagString: Untagged
@@ -12426,6 +12462,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906034919}
   m_CullTransparentMesh: 1
+--- !u!114 &1906034923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906034919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 156566352df03674db224e3a9b74452a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mText: {fileID: 0}
 --- !u!1 &1910238164
 GameObject:
   m_ObjectHideFlags: 0

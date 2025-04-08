@@ -12,7 +12,10 @@ namespace _100_Script._40_Utils
         CharacterSkill,
         CharacterStar,
         Character,
+        
+        Inventory,
         InventoryConsume,
+        InventoryEquip,
         
         Max
     }

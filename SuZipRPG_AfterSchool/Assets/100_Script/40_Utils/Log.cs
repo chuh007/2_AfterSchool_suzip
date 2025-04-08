@@ -12,7 +12,14 @@ namespace _100_Script._40_Utils
             // if(Manager.Log.IsLogCategoryOn[(int)logcategory])
             //     return;
             
+            
+            
             Debug.Log(message);
+        }
+
+        public static void Error(string message)
+        {
+            Debug.LogError(message);
         }
     }
 }

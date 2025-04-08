@@ -8,7 +8,7 @@ namespace _100_Script._20_UI
     {
         
         public ButtonController[] ButtonControllerArray = new ButtonController[2];
-        public TextView[] TextViewArray = new TextView[9];
+        public TextView[] TextViewArray = new TextView[3];
         
         public void Initialize()
         {
@@ -41,9 +41,9 @@ namespace _100_Script._20_UI
             
             TextViewArray[0].SetText(tempTargetItem.Name);
             TextViewArray[1].SetText(tempTargetItem.Description);
-            
-            
-            TextViewArray[1].SetText(tempTargetItem.Description);
+
+            string countText = $"보유 수량\nx{tempTargetItem.Count}";
+            TextViewArray[1].SetText(countText);
         }
     }
 }
