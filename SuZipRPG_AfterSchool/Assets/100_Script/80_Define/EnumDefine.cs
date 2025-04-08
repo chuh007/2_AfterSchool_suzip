@@ -1,49 +1,50 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace EnumDefine
 {
-    // Æ¯¼ö ¼Ó¼º
+    // íŠ¹ìˆ˜ ì†ì„±
     public enum AttackType
-    {        // °ø°İ Å¸ÀÔ
+    {        // ê³µê²© íƒ€ì…
         None = -1,
 
-        EXPLOSIVE,           // Æø¹ßÇü
-        PENETRATION,         // °üÅëÇü
-        MYSTIC               // ½ÅºñÇü
+        EXPLOSIVE,           // í­ë°œí˜•
+        PENETRATION,         // ê´€í†µí˜•
+        MYSTIC               // ì‹ ë¹„í˜•
     };
 
     public enum ArmorType
-    {         // ¹æ¾î Å¸ÀÔ
+    {         // ë°©ì–´ íƒ€ì…
         None = -1,
 
-        LIGHT_ARMOR,         // °æÀå°©
-        HEAVY_ARMOR,         // ÁßÀå°©
-        SPECIAL_ARMOR        // Æ¯¼öÀå°©
+        LIGHT_ARMOR,         // ê²½ì¥ê°‘
+        HEAVY_ARMOR,         // ì¤‘ì¥ê°‘
+        SPECIAL_ARMOR        // íŠ¹ìˆ˜ì¥ê°‘
     };
 
     public enum CombatRole
-    {        // ÀüÅõ ¿ªÇÒ
+    {        // ì „íˆ¬ ì—­í• 
         None = -1,
 
-        STRIKER,             // ½ºÆ®¶óÀÌÄ¿(°ø°İÇü)
-        SPECIAL              // ½ºÆä¼È(Áö¿øÇü)
+        STRIKER,             // ìŠ¤íŠ¸ë¼ì´ì»¤(ê³µê²©í˜•)
+        SPECIAL              // ìŠ¤í˜ì…œ(ì§€ì›í˜•)
     };
 
     public enum AttackRange
-    {       // °ø°İ ¹üÀ§
+    {       // ê³µê²© ë²”ìœ„
         None = -1,
 
-        FRONT,               // Àü¹æ
-        REAR                 // ÈÄ¹æ
+        FRONT,               // ì „ë°©
+        REAR                 // í›„ë°©
     };
 
     public enum CombatPosition
-    {    // ÀüÅõ À§Ä¡
+    {    // ì „íˆ¬ ìœ„ì¹˜
         None = -1,
 
-        FRONT_LINE,          // Àü¿­
-        MIDDLE_LINE,         // Áß¿­
-        BACK_LINE            // ÈÄ¿­
+        FRONT_LINE,          // ì „ì—´
+        MIDDLE_LINE,         // ì¤‘ì—´
+        BACK_LINE            // í›„ì—´
     };
 
 
@@ -56,6 +57,70 @@ namespace EnumDefine
         Legendary = 2,
         Epic = 3,
 
+        MAX,
+    }
+
+    public enum AbilityReason
+    {
+        None = -1,
+        
+        Level = 0,
+        
+        Equip1 = 1,
+        Equip2 = 2,
+        Equip3 = 3,
+        Equip4 = 4,
+        
+        MAX
+    }
+
+    public enum AbilityType
+    {
+        None = -1,
+        
+        MaxHp = 0,
+        AttackPower = 1,
+        Defense = 2,
+        HealAmount = 3,
+        
+        MAX
+    }
+
+    public enum ItemGrade
+    {
+        None = -1,
+        Common,
+        Rare,
+        Epic,
+        Legendary,
+        MAX,
+    }
+
+    public enum ConsumeType
+    {
+        None = -1,
+        
+        Unusable,
+        
+        Select,
+        Random,
+        MAX,
+    }
+
+    public enum EquipTier
+    {
+        None = -1,
+        Tier0,
+        Tier1,
+        Tier2,
+        Tier3,
+        Tier4,
+        Tier5,
+        Tier6,
+        Tier7,
+        Tier8,
+        Tier9,
+        
         MAX,
     }
 }

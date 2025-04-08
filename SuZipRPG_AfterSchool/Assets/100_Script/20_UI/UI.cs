@@ -23,4 +23,6 @@ public class UI : MonoBehaviour
         SkillUpController = GetComponentInChildren<SkillUpController>();
         SkillUpController.Initialize();
     }
+    
+    
 }
