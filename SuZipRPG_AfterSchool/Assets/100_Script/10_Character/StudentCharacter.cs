@@ -4,10 +4,10 @@ using EnumDefine;
 using System.Collections.Generic;
 
 
-// ÀÌ°Å¿¡ »óÀ§·Î Actor¶ó´Â Ä£±¸°¡ TransformÀÌ¶ó´øÁö Rendering °ü·Ã ¸ğµç °ÍµéÀ» °¡Áö°í ÀÖÀ» °Å¾ß!
+// ì´ê±°ì— ìƒìœ„ë¡œ Actorë¼ëŠ” ì¹œêµ¬ê°€ Transformì´ë¼ë˜ì§€ Rendering ê´€ë ¨ ëª¨ë“  ê²ƒë“¤ì„ ê°€ì§€ê³  ìˆì„ ê±°ì•¼!
 public class StudentCharacter
 {
-    // 1. ´É·ÂÄ¡"µé"
+    // 1. ëŠ¥ë ¥ì¹˜"ë“¤"
     public int Id;
     public string Name;
     public int Level;
@@ -18,9 +18,9 @@ public class StudentCharacter
     [SerializeField] public Dictionary<AbilityReason, int> Defense = new Dictionary<AbilityReason, int>();
     [SerializeField] public Dictionary<AbilityReason, int> HealAmount = new Dictionary<AbilityReason, int>();
 
-    // ±âÅ¸ ´É·ÂÄ¡µéÀÌ ÀÖÁö¸¸ ¿©±â±îÁö¸¸ ÀÏ´Ü ÇÕ½Ã´Ù
+    // ê¸°íƒ€ ëŠ¥ë ¥ì¹˜ë“¤ì´ ìˆì§€ë§Œ ì—¬ê¸°ê¹Œì§€ë§Œ ì¼ë‹¨ í•©ì‹œë‹¤
 
-    // 2. ´É·ÂÄ¡¸¦ Áı¾î ³ÖÀ½
+    // 2. ëŠ¥ë ¥ì¹˜ë¥¼ ì§‘ì–´ ë„£ìŒ
     public void SetAbility(AbilityType abilityType, AbilityReason abilityReason, int amount)
     {
         switch (abilityType)
@@ -29,7 +29,7 @@ public class StudentCharacter
             case AbilityType.MAX:
             default:
                 {
-                    Debug.Log("Àß¸øµÈ ¾îºô¸®Æ¼ Å¸ÀÔÀÌ ÀÔ·ÂµÇ¾ú½À´Ï´Ù.");
+                    Debug.Log("ì˜ëª»ëœ ì–´ë¹Œë¦¬í‹° íƒ€ì…ì´ ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
                     return;
                 }
             case AbilityType.MaxHP:
@@ -37,12 +37,12 @@ public class StudentCharacter
                     var debugLogString = string.Empty;
                     if (MaxHP.TryGetValue(abilityReason, out var value) == true)
                     {
-                        debugLogString = $"±âÁ¸ ´É·ÂÄ¡ »èÁ¦: {abilityType}, »çÀ¯: {abilityReason}";
+                        debugLogString = $"ê¸°ì¡´ ëŠ¥ë ¥ì¹˜ ì‚­ì œ: {abilityType}, ì‚¬ìœ : {abilityReason}";
                         Log.Message(debugLogString, LogCategory.CharacterStatus);
                         MaxHP.Remove(abilityReason);
                     }
 
-                    debugLogString = $"´É·ÂÄ¡ Ãß°¡: {abilityType}, »çÀ¯: {abilityReason}, ¼öÄ¡: {value}";
+                    debugLogString = $"ëŠ¥ë ¥ì¹˜ ì¶”ê°€: {abilityType}, ì‚¬ìœ : {abilityReason}, ìˆ˜ì¹˜: {value}";
                     Log.Message(debugLogString, LogCategory.CharacterStatus);
                     MaxHP.Add(abilityReason, amount);
 
@@ -53,12 +53,12 @@ public class StudentCharacter
                     var debugLogString = string.Empty;
                     if (AttackPower.TryGetValue(abilityReason, out var value) == true)
                     {
-                        debugLogString = $"±âÁ¸ ´É·ÂÄ¡ »èÁ¦: {abilityType}, »çÀ¯: {abilityReason}";
+                        debugLogString = $"ê¸°ì¡´ ëŠ¥ë ¥ì¹˜ ì‚­ì œ: {abilityType}, ì‚¬ìœ : {abilityReason}";
                         Log.Message(debugLogString, LogCategory.CharacterStatus);
                         AttackPower.Remove(abilityReason);
                     }
 
-                    debugLogString = $"´É·ÂÄ¡ Ãß°¡: {abilityType}, »çÀ¯: {abilityReason}, ¼öÄ¡: {value}";
+                    debugLogString = $"ëŠ¥ë ¥ì¹˜ ì¶”ê°€: {abilityType}, ì‚¬ìœ : {abilityReason}, ìˆ˜ì¹˜: {value}";
                     Log.Message(debugLogString, LogCategory.CharacterStatus);
                     AttackPower.Add(abilityReason, amount);
 
@@ -69,12 +69,12 @@ public class StudentCharacter
                     var debugLogString = string.Empty;
                     if (Defense.TryGetValue(abilityReason, out var value) == true)
                     {
-                        debugLogString = $"±âÁ¸ ´É·ÂÄ¡ »èÁ¦: {abilityType}, »çÀ¯: {abilityReason}";
+                        debugLogString = $"ê¸°ì¡´ ëŠ¥ë ¥ì¹˜ ì‚­ì œ: {abilityType}, ì‚¬ìœ : {abilityReason}";
                         Log.Message(debugLogString, LogCategory.CharacterStatus);
                         Defense.Remove(abilityReason);
                     }
 
-                    debugLogString = $"´É·ÂÄ¡ Ãß°¡: {abilityType}, »çÀ¯: {abilityReason}, ¼öÄ¡: {value}";
+                    debugLogString = $"ëŠ¥ë ¥ì¹˜ ì¶”ê°€: {abilityType}, ì‚¬ìœ : {abilityReason}, ìˆ˜ì¹˜: {value}";
                     Log.Message(debugLogString, LogCategory.CharacterStatus);
                     Defense.Add(abilityReason, amount);
 
@@ -85,12 +85,12 @@ public class StudentCharacter
                     var debugLogString = string.Empty;
                     if (HealAmount.TryGetValue(abilityReason, out var value) == true)
                     {
-                        debugLogString = $"±âÁ¸ ´É·ÂÄ¡ »èÁ¦: {abilityType}, »çÀ¯: {abilityReason}";
+                        debugLogString = $"ê¸°ì¡´ ëŠ¥ë ¥ì¹˜ ì‚­ì œ: {abilityType}, ì‚¬ìœ : {abilityReason}";
                         Log.Message(debugLogString, LogCategory.CharacterStatus);
                         HealAmount.Remove(abilityReason);
                     }
 
-                    debugLogString = $"´É·ÂÄ¡ Ãß°¡: {abilityType}, »çÀ¯: {abilityReason}, ¼öÄ¡: {value}";
+                    debugLogString = $"ëŠ¥ë ¥ì¹˜ ì¶”ê°€: {abilityType}, ì‚¬ìœ : {abilityReason}, ìˆ˜ì¹˜: {value}";
                     Log.Message(debugLogString, LogCategory.CharacterStatus);
                     HealAmount.Add(abilityReason, amount);
 
@@ -99,7 +99,7 @@ public class StudentCharacter
         }
     }
 
-    // 3. ´É·ÂÄ¡ÀÇ ÃÑÇÕÀ» °è»ê
+    // 3. ëŠ¥ë ¥ì¹˜ì˜ ì´í•©ì„ ê³„ì‚°
     public int GetTotalStatus(AbilityType abilityType)
     {
         switch (abilityType)
@@ -108,7 +108,7 @@ public class StudentCharacter
             case AbilityType.MAX:
             default:
                 {
-                    Debug.Log("Àß¸øµÈ ¾îºô¸®Æ¼ Å¸ÀÔÀÌ ÀÔ·ÂµÇ¾ú½À´Ï´Ù.");
+                    Debug.Log("ì˜ëª»ëœ ì–´ë¹Œë¦¬í‹° íƒ€ì…ì´ ì…ë ¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
 
                     return 0;
                 }
@@ -154,7 +154,7 @@ public class StudentCharacter
                 }
         }
     }
-    // 3. °è»êµÈ ´É·ÂÄ¡¸¦ ¹İÈ¯
+    // 3. ê³„ì‚°ëœ ëŠ¥ë ¥ì¹˜ë¥¼ ë°˜í™˜
 
-    // 4. ¿Ö ÇØ´ç ´É·ÂÄ¡°¡ ¿Ã¶úÀ»±î? => AbilityReasonÀ» »ç¿ë!
+    // 4. ì™œ í•´ë‹¹ ëŠ¥ë ¥ì¹˜ê°€ ì˜¬ëì„ê¹Œ? => AbilityReasonì„ ì‚¬ìš©!
 }

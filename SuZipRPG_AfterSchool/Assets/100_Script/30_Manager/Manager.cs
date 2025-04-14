@@ -1,30 +1,30 @@
-using UnityEngine; // Unity ¿£Áø ³×ÀÓ½ºÆäÀÌ½º °¡Á®¿À±â
+using UnityEngine; // Unity ì—”ì§„ ë„¤ìž„ìŠ¤íŽ˜ì´ìŠ¤ ê°€ì ¸ì˜¤ê¸°
 
 /// <summary>
-/// °ÔÀÓ ÀüÃ¼ÀÇ °ü¸®ÀÚ ¿ªÇÒÀ» ÇÏ´Â Å¬·¡½ºÀÔ´Ï´Ù.
+/// ê²Œìž„ ì „ì²´ì˜ ê´€ë¦¬ìž ì—­í• ì„ í•˜ëŠ” í´ëž˜ìŠ¤ìž…ë‹ˆë‹¤.
 /// </summary>
 public class Manager : MonoBehaviour
 {
     /// <summary>
-    /// °ÔÀÓ ½ÃÀÛ ½Ã ÀÚµ¿À¸·Î È£ÃâµÇ´Â ¸Þ¼ÒµåÀÔ´Ï´Ù.
+    /// ê²Œìž„ ì‹œìž‘ ì‹œ ìžë™ìœ¼ë¡œ í˜¸ì¶œë˜ëŠ” ë©”ì†Œë“œìž…ë‹ˆë‹¤.
     /// </summary>
     private void Awake()
     {
         SetLogManager();
 
-        SetDataManager(); // µ¥ÀÌÅÍ ¸Å´ÏÀú ÃÊ±âÈ­
+        SetDataManager(); // ë°ì´í„° ë§¤ë‹ˆì € ì´ˆê¸°í™”
 
     }
 
     /// <summary>
-    /// µ¥ÀÌÅÍ ¸Å´ÏÀú¿¡ ´ëÇÑ Á¤Àû Á¢±ÙÀ» Á¦°øÇÏ´Â ÇÁ·ÎÆÛÆ¼ÀÔ´Ï´Ù.
-    /// ÀÐ±â´Â ¾îµð¼­³ª °¡´ÉÇÏÁö¸¸ ¼³Á¤Àº ÀÌ Å¬·¡½º ³»ºÎ¿¡¼­¸¸ °¡´ÉÇÕ´Ï´Ù.
+    /// ë°ì´í„° ë§¤ë‹ˆì €ì— ëŒ€í•œ ì •ì  ì ‘ê·¼ì„ ì œê³µí•˜ëŠ” í”„ë¡œí¼í‹°ìž…ë‹ˆë‹¤.
+    /// ì½ê¸°ëŠ” ì–´ë””ì„œë‚˜ ê°€ëŠ¥í•˜ì§€ë§Œ ì„¤ì •ì€ ì´ í´ëž˜ìŠ¤ ë‚´ë¶€ì—ì„œë§Œ ê°€ëŠ¥í•©ë‹ˆë‹¤.
     /// </summary>
     public static DataManager Data { get; private set; }
 
     /// <summary>
-    /// ÇöÀç GameObjectÀÇ ÀÚ½Ä ÄÄÆ÷³ÍÆ® Áß¿¡¼­ DataManager¸¦ Ã£¾Æ
-    /// Á¤Àû ÇÁ·ÎÆÛÆ¼¿¡ ÇÒ´çÇÏ´Â ¸Þ¼ÒµåÀÔ´Ï´Ù.
+    /// í˜„ìž¬ GameObjectì˜ ìžì‹ ì»´í¬ë„ŒíŠ¸ ì¤‘ì—ì„œ DataManagerë¥¼ ì°¾ì•„
+    /// ì •ì  í”„ë¡œí¼í‹°ì— í• ë‹¹í•˜ëŠ” ë©”ì†Œë“œìž…ë‹ˆë‹¤.
     /// </summary>
     private void SetDataManager()
     {
