@@ -1,25 +1,25 @@
+#if LOG
+
 using UnityEngine;
 
-namespace _100_Script._40_Utils
+public class Log
 {
-    public static class Log
+    //Log.Message("·Î±×");
+
+    public static void Message(string message, LogCategory logCategory)
     {
-        public static void Message(string message, LogCategory logcategory)
+        if(Manager.Log.IsLogOn == false)
         {
-            // if(Manager.Log.IsLogOn == false)
-            //     return;
-            
-            // if(Manager.Log.IsLogCategoryOn[(int)logcategory])
-            //     return;
-            
-            
-            
-            Debug.Log(message);
+            return;
         }
 
-        public static void Error(string message)
+        if (Manager.Log.IsLogCategoryOn[(int)logCategory] == false)
         {
-            Debug.LogError(message);
+            return;
         }
+
+        Debug.Log(message);
     }
 }
+
+#endif

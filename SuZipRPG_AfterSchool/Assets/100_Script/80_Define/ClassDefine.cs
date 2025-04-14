@@ -11,33 +11,33 @@ namespace ClassDefine
         public int Level;
         public int Exp;
 
-        // ê¸°ë³¸ ìŠ¤íƒ¯
-        public int Hp;                  // ì²´ë ¥
-        public int AttackPower;         // ê³µê²©ë ¥
-        public int Defense;             // ë°©ì–´ë ¥
-        public int HealAmount;          // ížëŸ‰
-        public float HitRate;           // ëª…ì¤‘ë¥  (%)
-        public float EvasionRate;       // íšŒí”¼ìœ¨ (%)
-        public float CriticalRate;      // ì¹˜ëª…íƒ€ìœ¨ (%)
-        public float CriticalDamage;    // ì¹˜ëª…íƒ€ ë°ë¯¸ì§€ (%)
-        public float CcResistance;      // CC ì €í•­ (%)
-        public float CostRecovery;      // ë¹„ìš© íšŒë³µëŸ‰
+        // ±âº» ½ºÅÈ
+        public int Hp;                  // Ã¼·Â
+        public int AttackPower;         // °ø°Ý·Â
+        public int Defense;             // ¹æ¾î·Â
+        public int HealAmount;          // Èú·®
+        public float HitRate;           // ¸íÁß·ü (%)
+        public float EvasionRate;       // È¸ÇÇÀ² (%)
+        public float CriticalRate;      // Ä¡¸íÅ¸À² (%)
+        public float CriticalDamage;    // Ä¡¸íÅ¸ µ¥¹ÌÁö (%)
+        public float CcResistance;      // CC ÀúÇ× (%)
+        public float CostRecovery;      // ºñ¿ë È¸º¹·®
                                         
-        // ìºë¦­í„° íŠ¹ì„±
-        public AttackType AttackType;        // ê³µê²© íƒ€ìž…
-        public ArmorType ArmorType;          // ë°©ì–´ íƒ€ìž…
-        public CombatRole CombatRole;        // ì „íˆ¬ ì—­í• 
-        public AttackRange AttackRange;      // ê³µê²© ë²”ìœ„
-        public CombatPosition CombatPosition; // ì „íˆ¬ ìœ„ì¹˜
+        // Ä³¸¯ÅÍ Æ¯¼º
+        public AttackType AttackType;        // °ø°Ý Å¸ÀÔ
+        public ArmorType ArmorType;          // ¹æ¾î Å¸ÀÔ
+        public CombatRole CombatRole;        // ÀüÅõ ¿ªÇÒ
+        public AttackRange AttackRange;      // °ø°Ý ¹üÀ§
+        public CombatPosition CombatPosition; // ÀüÅõ À§Ä¡
                                               
-        // ë¶€ê°€ ìŠ¤íƒ¯
-        public int StreetCombatPower;    // ìŠ¤íŠ¸ë¦¬íŠ¸ ì „íˆ¬ë ¥
-        public int IndoorCombatPower;   // ì‹¤ë‚´ ì „íˆ¬ë ¥
-        public int OutdoorCombatPower;  // ì•¼ì™¸ ì „íˆ¬ë ¥
+        // ºÎ°¡ ½ºÅÈ
+        public int StreetCombatPower;    // ½ºÆ®¸®Æ® ÀüÅõ·Â
+        public int IndoorCombatPower;   // ½Ç³» ÀüÅõ·Â
+        public int OutdoorCombatPower;  // ¾ß¿Ü ÀüÅõ·Â
     }
 
     [Serializable]
-    public class StudentLevelStatusInfo // => Listë¡œ ê´€ë¦¬
+    public class StudentLevelStatusInfo // => List·Î °ü¸®
     {
         public int Level;
         public int Exp;
@@ -50,16 +50,36 @@ namespace ClassDefine
 
     public class ConsumeInfo : ItemInfo
     {
+        //public uint ID;
+
+        //public string Name;
+        //public string Description;
+
+        //public int Count;
+
+        //public ItemGrade Grade;
+
         public ConsumeType ConsumeType;
-        public string IconName;
+
+        public String IconName;
     }
 
     public class EquipInfo : ItemInfo
     {
+        //public uint ID;
+
+        //public string Name;
+        //public string Description;
+
+        //public int Count;
+
+        //public ItemGrade Grade;
+
+        // ´É·ÂÄ¡ Á¤º¸µé
         public int MaxHP;
         public int AttackPower;
-        
-        public string IconName;
+
+        public String IconName;
     }
 
     public class ItemInfo
@@ -68,9 +88,9 @@ namespace ClassDefine
 
         public string Name;
         public string Description;
-        
+
         public int Count;
-        
+
         public ItemGrade Grade;
     }
 }

@@ -4,8 +4,10 @@ public class UI : MonoBehaviour
 {
     private void Start()
     {
-        SetDeckController();
-        SetSkillUpController();
+        //SetDeckController();
+        //SetSkillUpController();
+        //SetEquipUpController();
+        SetInventoryConsumeController();
     }
 
     public static DeckController DeckController { get; private set; }
@@ -23,6 +25,20 @@ public class UI : MonoBehaviour
         SkillUpController = GetComponentInChildren<SkillUpController>();
         SkillUpController.Initialize();
     }
+
+    public static EquipUpController EquipUpController { get; private set; }
+
+    private void SetEquipUpController()
+    {
+        EquipUpController = GetComponentInChildren <EquipUpController>();
+        EquipUpController.Initialize();
+    }
     
-    
+    public static InventoryConsumeController InventoryConsumeController { get; private set; } = new InventoryConsumeController();
+
+    private void SetInventoryConsumeController()
+    {
+        InventoryConsumeController = GetComponentInChildren<InventoryConsumeController>();
+        InventoryConsumeController.Initialize();
+    }
 }

@@ -1,31 +1,42 @@
-using UnityEngine; // Unity ì—”ì§„ ë„¤ì„ìŠ¤í˜ì´ìŠ¤ ê°€ì ¸ì˜¤ê¸°
+using UnityEngine; // Unity ¿£Áø ³×ÀÓ½ºÆäÀÌ½º °¡Á®¿À±â
 
 /// <summary>
-/// ê²Œì„ ì „ì²´ì˜ ê´€ë¦¬ì ì—­í• ì„ í•˜ëŠ” í´ë˜ìŠ¤ì…ë‹ˆë‹¤.
+/// °ÔÀÓ ÀüÃ¼ÀÇ °ü¸®ÀÚ ¿ªÇÒÀ» ÇÏ´Â Å¬·¡½ºÀÔ´Ï´Ù.
 /// </summary>
 public class Manager : MonoBehaviour
 {
     /// <summary>
-    /// ê²Œì„ ì‹œì‘ ì‹œ ìë™ìœ¼ë¡œ í˜¸ì¶œë˜ëŠ” ë©”ì†Œë“œì…ë‹ˆë‹¤.
+    /// °ÔÀÓ ½ÃÀÛ ½Ã ÀÚµ¿À¸·Î È£ÃâµÇ´Â ¸Ş¼ÒµåÀÔ´Ï´Ù.
     /// </summary>
     private void Awake()
     {
-        SetDataManager(); // ë°ì´í„° ë§¤ë‹ˆì € ì´ˆê¸°í™”
+        SetLogManager();
+
+        SetDataManager(); // µ¥ÀÌÅÍ ¸Å´ÏÀú ÃÊ±âÈ­
+
     }
 
     /// <summary>
-    /// ë°ì´í„° ë§¤ë‹ˆì €ì— ëŒ€í•œ ì •ì  ì ‘ê·¼ì„ ì œê³µí•˜ëŠ” í”„ë¡œí¼í‹°ì…ë‹ˆë‹¤.
-    /// ì½ê¸°ëŠ” ì–´ë””ì„œë‚˜ ê°€ëŠ¥í•˜ì§€ë§Œ ì„¤ì •ì€ ì´ í´ë˜ìŠ¤ ë‚´ë¶€ì—ì„œë§Œ ê°€ëŠ¥í•©ë‹ˆë‹¤.
+    /// µ¥ÀÌÅÍ ¸Å´ÏÀú¿¡ ´ëÇÑ Á¤Àû Á¢±ÙÀ» Á¦°øÇÏ´Â ÇÁ·ÎÆÛÆ¼ÀÔ´Ï´Ù.
+    /// ÀĞ±â´Â ¾îµğ¼­³ª °¡´ÉÇÏÁö¸¸ ¼³Á¤Àº ÀÌ Å¬·¡½º ³»ºÎ¿¡¼­¸¸ °¡´ÉÇÕ´Ï´Ù.
     /// </summary>
     public static DataManager Data { get; private set; }
 
     /// <summary>
-    /// í˜„ì¬ GameObjectì˜ ìì‹ ì»´í¬ë„ŒíŠ¸ ì¤‘ì—ì„œ DataManagerë¥¼ ì°¾ì•„
-    /// ì •ì  í”„ë¡œí¼í‹°ì— í• ë‹¹í•˜ëŠ” ë©”ì†Œë“œì…ë‹ˆë‹¤.
+    /// ÇöÀç GameObjectÀÇ ÀÚ½Ä ÄÄÆ÷³ÍÆ® Áß¿¡¼­ DataManager¸¦ Ã£¾Æ
+    /// Á¤Àû ÇÁ·ÎÆÛÆ¼¿¡ ÇÒ´çÇÏ´Â ¸Ş¼ÒµåÀÔ´Ï´Ù.
     /// </summary>
     private void SetDataManager()
     {
         Data = transform.GetComponentInChildren<DataManager>();
         Data.Initialize();
+    }
+
+    public static LogManager Log { get; private set; }
+
+    public void SetLogManager()
+    {
+        Log = transform.GetComponentInChildren<LogManager>();
+        Log.Initialize();
     }
 }

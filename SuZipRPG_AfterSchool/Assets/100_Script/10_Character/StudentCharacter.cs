@@ -1,87 +1,160 @@
-using System;
-using System.Collections.Generic;
-using EnumDefine;
 using UnityEngine;
 
-public class StudentCharacter : MonoBehaviour
+using EnumDefine;
+using System.Collections.Generic;
+
+
+// ÀÌ°Å¿¡ »óÀ§·Î Actor¶ó´Â Ä£±¸°¡ TransformÀÌ¶ó´øÁö Rendering °ü·Ã ¸ðµç °ÍµéÀ» °¡Áö°í ÀÖÀ» °Å¾ß!
+public class StudentCharacter
 {
-    // 1. ëŠ¥ë ¥ì¹˜"ë“¤"
+    // 1. ´É·ÂÄ¡"µé"
+    public int Id;
+    public string Name;
     public int Level;
     public int Exp;
 
-    public Dictionary<AbilityReason, int> MaxHp = new Dictionary<AbilityReason, int>();
-    public Dictionary<AbilityReason, int> AttackPower = new Dictionary<AbilityReason, int>();
-    public Dictionary<AbilityReason, int> Defense = new Dictionary<AbilityReason, int>();
-    public Dictionary<AbilityReason, int> HealAmount = new Dictionary<AbilityReason, int>();
+    [SerializeField] public Dictionary<AbilityReason, int> MaxHP = new Dictionary<AbilityReason, int>();
+    [SerializeField] public Dictionary<AbilityReason, int> AttackPower = new Dictionary<AbilityReason, int>();
+    [SerializeField] public Dictionary<AbilityReason, int> Defense = new Dictionary<AbilityReason, int>();
+    [SerializeField] public Dictionary<AbilityReason, int> HealAmount = new Dictionary<AbilityReason, int>();
 
-    // ê¸°íƒ€ ëŠ¥ë ¥ì¹˜ë“¤ì´ ìžˆì§€ë§Œ ì—¬ê¸°ê¹Œì§€ë§Œ ì¼ë‹¨ í•¨.
-    
-    // 2. ëŠ¥ë ¥ì¹˜ë¥¼ ì§‘ì–´ ë„£ìŒ
-    public void SetAbility(AbilityType abilityType ,AbilityReason reason, int amount)
+    // ±âÅ¸ ´É·ÂÄ¡µéÀÌ ÀÖÁö¸¸ ¿©±â±îÁö¸¸ ÀÏ´Ü ÇÕ½Ã´Ù
+
+    // 2. ´É·ÂÄ¡¸¦ Áý¾î ³ÖÀ½
+    public void SetAbility(AbilityType abilityType, AbilityReason abilityReason, int amount)
     {
         switch (abilityType)
         {
             case AbilityType.None:
             case AbilityType.MAX:
             default:
-                Debug.Log("ìž˜ëª»ëœ ì–´ë¹Œë¦¬í‹° íƒ€ìž…");
-                break;
-            case AbilityType.MaxHp:
-            {
-                if (MaxHp.TryGetValue(reason, out int value) == true) MaxHp.Remove(reason);
-                MaxHp[reason] = amount;
-                break;
-            }
+                {
+                    Debug.Log("Àß¸øµÈ ¾îºô¸®Æ¼ Å¸ÀÔÀÌ ÀÔ·ÂµÇ¾ú½À´Ï´Ù.");
+                    return;
+                }
+            case AbilityType.MaxHP:
+                {
+                    var debugLogString = string.Empty;
+                    if (MaxHP.TryGetValue(abilityReason, out var value) == true)
+                    {
+                        debugLogString = $"±âÁ¸ ´É·ÂÄ¡ »èÁ¦: {abilityType}, »çÀ¯: {abilityReason}";
+                        Log.Message(debugLogString, LogCategory.CharacterStatus);
+                        MaxHP.Remove(abilityReason);
+                    }
+
+                    debugLogString = $"´É·ÂÄ¡ Ãß°¡: {abilityType}, »çÀ¯: {abilityReason}, ¼öÄ¡: {value}";
+                    Log.Message(debugLogString, LogCategory.CharacterStatus);
+                    MaxHP.Add(abilityReason, amount);
+
+                    return;
+                }
             case AbilityType.AttackPower:
-            {
-                if (AttackPower.TryGetValue(reason, out int value) == true) MaxHp.Remove(reason);
-                AttackPower[reason] = amount;
-                break;
-            }
-            case AbilityType.Defense:{
-                if (Defense.TryGetValue(reason, out int value) == true) MaxHp.Remove(reason);
-                Defense[reason] = amount;
-                break;
-            }
-            case AbilityType.HealAmount:{
-                if (HealAmount.TryGetValue(reason, out int value) == true) MaxHp.Remove(reason);
-                HealAmount[reason] = amount;
-                break;
-            }
-        }
-    }
-    
-    // 2. ëŠ¥ë ¥ì¹˜ì˜ ì´í•©ì„ ê³„ì‚°
-    private int TotalStatus(AbilityType abilityType)
-    {
-        int totalValue = 0;
-        switch (abilityType)
-        {
-            case AbilityType.None:
-            case AbilityType.MAX:
-            default:
-                Debug.Log("ìž˜ëª»ëœ ì–´ë¹Œë¦¬í‹° íƒ€ìž…");
-                return 0;
-            case AbilityType.MaxHp:
-                foreach (var reasonValue in MaxHp) totalValue += reasonValue.Value;
-                return totalValue;
-            case AbilityType.AttackPower:
-                foreach (var reasonValue in AttackPower) totalValue += reasonValue.Value;
-                return totalValue;
+                {
+                    var debugLogString = string.Empty;
+                    if (AttackPower.TryGetValue(abilityReason, out var value) == true)
+                    {
+                        debugLogString = $"±âÁ¸ ´É·ÂÄ¡ »èÁ¦: {abilityType}, »çÀ¯: {abilityReason}";
+                        Log.Message(debugLogString, LogCategory.CharacterStatus);
+                        AttackPower.Remove(abilityReason);
+                    }
+
+                    debugLogString = $"´É·ÂÄ¡ Ãß°¡: {abilityType}, »çÀ¯: {abilityReason}, ¼öÄ¡: {value}";
+                    Log.Message(debugLogString, LogCategory.CharacterStatus);
+                    AttackPower.Add(abilityReason, amount);
+
+                    return;
+                }
             case AbilityType.Defense:
-                foreach (var reasonValue in Defense) totalValue += reasonValue.Value;
-                return totalValue;
+                {
+                    var debugLogString = string.Empty;
+                    if (Defense.TryGetValue(abilityReason, out var value) == true)
+                    {
+                        debugLogString = $"±âÁ¸ ´É·ÂÄ¡ »èÁ¦: {abilityType}, »çÀ¯: {abilityReason}";
+                        Log.Message(debugLogString, LogCategory.CharacterStatus);
+                        Defense.Remove(abilityReason);
+                    }
+
+                    debugLogString = $"´É·ÂÄ¡ Ãß°¡: {abilityType}, »çÀ¯: {abilityReason}, ¼öÄ¡: {value}";
+                    Log.Message(debugLogString, LogCategory.CharacterStatus);
+                    Defense.Add(abilityReason, amount);
+
+                    return;
+                }
             case AbilityType.HealAmount:
-                foreach (var reasonValue in HealAmount) totalValue += reasonValue.Value;
-                return totalValue;
-            
+                {
+                    var debugLogString = string.Empty;
+                    if (HealAmount.TryGetValue(abilityReason, out var value) == true)
+                    {
+                        debugLogString = $"±âÁ¸ ´É·ÂÄ¡ »èÁ¦: {abilityType}, »çÀ¯: {abilityReason}";
+                        Log.Message(debugLogString, LogCategory.CharacterStatus);
+                        HealAmount.Remove(abilityReason);
+                    }
+
+                    debugLogString = $"´É·ÂÄ¡ Ãß°¡: {abilityType}, »çÀ¯: {abilityReason}, ¼öÄ¡: {value}";
+                    Log.Message(debugLogString, LogCategory.CharacterStatus);
+                    HealAmount.Add(abilityReason, amount);
+
+                    return;
+                }
         }
-        return 0;
     }
-    
-    // 3. ê³„ì‚°ëœ ëŠ¥ë ¥ì¹˜ë¥¼ ë°˜í™˜
 
-    // 4. ì™œ í•´ë‹¹ ëŠ˜ë ¥ì¹˜ê°€ ì˜¬ëžì„ê¹Œ? => AbilityReasonì„ ì‚¬ìš©
+    // 3. ´É·ÂÄ¡ÀÇ ÃÑÇÕÀ» °è»ê
+    public int GetTotalStatus(AbilityType abilityType)
+    {
+        switch (abilityType)
+        {
+            case AbilityType.None:
+            case AbilityType.MAX:
+            default:
+                {
+                    Debug.Log("Àß¸øµÈ ¾îºô¸®Æ¼ Å¸ÀÔÀÌ ÀÔ·ÂµÇ¾ú½À´Ï´Ù.");
 
+                    return 0;
+                }
+            case AbilityType.MaxHP:
+                {
+                    int totalValue = 0;
+                    foreach (var reasonValue in MaxHP)
+                    {
+                        totalValue += reasonValue.Value;
+                    }
 
+                    return totalValue;
+                }
+            case AbilityType.AttackPower:
+                {
+                    int totalValue = 0;
+                    foreach (var reasonValue in AttackPower)
+                    {
+                        totalValue += reasonValue.Value;
+                    }
+
+                    return totalValue;
+                }
+            case AbilityType.Defense:
+                {
+                    int totalValue = 0;
+                    foreach (var reasonValue in Defense)
+                    {
+                        totalValue += reasonValue.Value;
+                    }
+
+                    return totalValue;
+                }
+            case AbilityType.HealAmount:
+                {
+                    int totalValue = 0;
+                    foreach (var reasonValue in HealAmount)
+                    {
+                        totalValue += reasonValue.Value;
+                    }
+
+                    return totalValue;
+                }
+        }
+    }
+    // 3. °è»êµÈ ´É·ÂÄ¡¸¦ ¹ÝÈ¯
+
+    // 4. ¿Ö ÇØ´ç ´É·ÂÄ¡°¡ ¿Ã¶úÀ»±î? => AbilityReasonÀ» »ç¿ë!
 }

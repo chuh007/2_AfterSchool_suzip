@@ -1,49 +1,51 @@
-ï»¿using _100_Script._40_Utils;
 using ClassDefine;
 using UnityEngine;
 
-namespace _100_Script._20_UI
+public class InventoryConsumeController : MonoBehaviour, IUI
 {
-    public class InventoryConsumeController : MonoBehaviour, IUI
+    public ButtonController[] ButtonControllerArray = new ButtonController[2];
+    public TextView[] TextViewArray = new TextView[3];
+
+    public void Initialize()
     {
-        
-        public ButtonController[] ButtonControllerArray = new ButtonController[2];
-        public TextView[] TextViewArray = new TextView[3];
-        
-        public void Initialize()
-        {
-            Close();
 
-            foreach (var button in ButtonControllerArray)
-            {
-                button.Initialize();
-            }
-            
-            ButtonControllerArray[0].SetButtonAction(() =>
-            {
-                Log.Message("",LogCategory.InventoryConsume);
-            });
+        foreach (var button in ButtonControllerArray)
+        {
+            button.Initialize();
         }
 
-        public void Open()
+        ButtonControllerArray[0].SetButtonAction(() =>
         {
-            gameObject.SetActive(true);
-        }
-        
-        public void Close()
+            Log.Message("È¹µæ Àå¼Ò UI Ãâ·Â", LogCategory.InventoryConsume);
+        });
+        ButtonControllerArray[1].SetButtonAction(() =>
         {
-            gameObject.SetActive(false);
-        }
-        
-        public void SetItemConsumeText()
-        {
-            ConsumeInfo tempTargetItem = Manager.Data.ConsumeItemList[0];
-            
-            TextViewArray[0].SetText(tempTargetItem.Name);
-            TextViewArray[1].SetText(tempTargetItem.Description);
+            Log.Message("¿­±â ¹öÆ° Ãâ·Â", LogCategory.InventoryConsume);
+        });
 
-            string countText = $"ë³´ìœ  ìˆ˜ëŸ‰\nx{tempTargetItem.Count}";
-            TextViewArray[1].SetText(countText);
-        }
+        Open();
+    }
+
+    public void Open()
+    {
+        gameObject.SetActive(true);
+
+        SetItemConsumeText();
+    }
+
+    public void Close()
+    {
+        gameObject.SetActive(false);
+    }
+
+    public void SetItemConsumeText()
+    {
+        ConsumeInfo tempTargetItem = Manager.Data.ConsumeItemList[0];
+
+        TextViewArray[0].SetText(tempTargetItem.Name);
+        TextViewArray[1].SetText(tempTargetItem.Description);
+
+        string countText = $"º¸À¯ ¼ö·®\nx{tempTargetItem.Count}";
+        TextViewArray[2].SetText(countText);
     }
 }
