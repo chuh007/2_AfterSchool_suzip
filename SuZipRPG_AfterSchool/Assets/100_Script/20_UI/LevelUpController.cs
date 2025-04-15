@@ -23,8 +23,8 @@ public class LevelUpController : MonoBehaviour, IUI
         ButtonArray[1].SetButtonAction(SetExpRare);
         ButtonArray[2].SetButtonAction(SetExpLegendary);
         ButtonArray[3].SetButtonAction(SetExpEpic);
-        ButtonArray[4].SetButtonAction(() => { Debug.Log("ìë™ì„ íƒ êµ¬í˜„ ì¤‘"); });
-        ButtonArray[5].SetButtonAction(() => { Debug.Log("ë ˆë²¨ ì—… êµ¬í˜„ ì¤‘"); });
+        ButtonArray[4].SetButtonAction(() => { Debug.Log("ÀÚµ¿¼±ÅÃ ±¸Çö Áß"); });
+        ButtonArray[5].SetButtonAction(() => { Debug.Log("·¹º§ ¾÷ ±¸Çö Áß"); });
     }
 
     public void Open()
@@ -34,7 +34,7 @@ public class LevelUpController : MonoBehaviour, IUI
 
     public void Close()
     {
-        // ê²Œì„ ì˜¤ë¸Œì íŠ¸ê°€ êº¼ì§€ê³ 
+        // °ÔÀÓ ¿ÀºêÁ§Æ®°¡ ²¨Áö°í
     }
 
     private void SetExpCommon()
@@ -74,8 +74,8 @@ public class LevelUpController : MonoBehaviour, IUI
     {
         if(Manager.Data.StudentLevelStatusDictionary.TryGetValue(0, out List<StudentLevelStatusInfo> targetStudentLevelDataList) == false)
         {
-            Debug.LogError("ID ê°’ì´ 0ì¸ í•™ìƒì„ ì°¾ì„ ìˆ˜ê°€ ì—†ìŠµë‹ˆë‹¤"); // => ì„œë²„ ë“±ìœ¼ë¡œ ì—ëŸ¬ ì½”ë“œë¥¼ ë³´ë‚¼ë•Œ ì‚¬ìš©
-            // ì˜¤ë¥˜ ìƒí™©ì´ ë‚¬ì„ ë–„ ê²Œì„ì´ ì¢…ë£Œë˜ë„ë¡ ì„¤ì •
+            Debug.LogError("ID °ªÀÌ 0ÀÎ ÇĞ»ıÀ» Ã£À» ¼ö°¡ ¾ø½À´Ï´Ù"); // => ¼­¹ö µîÀ¸·Î ¿¡·¯ ÄÚµå¸¦ º¸³¾¶§ »ç¿ë
+            // ¿À·ù »óÈ²ÀÌ ³µÀ» ‹š °ÔÀÓÀÌ Á¾·áµÇµµ·Ï ¼³Á¤
         }
         StudentLevelStatusInfo currentTargetStudentData = targetStudentLevelDataList.FirstOrDefault(student => student.Level == 1);
         

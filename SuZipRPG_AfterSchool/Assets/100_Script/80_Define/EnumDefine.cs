@@ -2,48 +2,48 @@ using UnityEngine;
 
 namespace EnumDefine
 {
-    // íŠ¹ìˆ˜ ì†ì„±
+    // Æ¯¼ö ¼Ó¼º
     public enum AttackType
-    {        // ê³µê²© íƒ€ìž…
+    {        // °ø°Ý Å¸ÀÔ
         None = -1,
 
-        EXPLOSIVE,           // í­ë°œí˜•
-        PENETRATION,         // ê´€í†µí˜•
-        MYSTIC               // ì‹ ë¹„í˜•
+        EXPLOSIVE,           // Æø¹ßÇü
+        PENETRATION,         // °üÅëÇü
+        MYSTIC               // ½ÅºñÇü
     };
 
     public enum ArmorType
-    {         // ë°©ì–´ íƒ€ìž…
+    {         // ¹æ¾î Å¸ÀÔ
         None = -1,
 
-        LIGHT_ARMOR,         // ê²½ìž¥ê°‘
-        HEAVY_ARMOR,         // ì¤‘ìž¥ê°‘
-        SPECIAL_ARMOR        // íŠ¹ìˆ˜ìž¥ê°‘
+        LIGHT_ARMOR,         // °æÀå°©
+        HEAVY_ARMOR,         // ÁßÀå°©
+        SPECIAL_ARMOR        // Æ¯¼öÀå°©
     };
 
     public enum CombatRole
-    {        // ì „íˆ¬ ì—­í• 
+    {        // ÀüÅõ ¿ªÇÒ
         None = -1,
 
-        STRIKER,             // ìŠ¤íŠ¸ë¼ì´ì»¤(ê³µê²©í˜•)
-        SPECIAL              // ìŠ¤íŽ˜ì…œ(ì§€ì›í˜•)
+        STRIKER,             // ½ºÆ®¶óÀÌÄ¿(°ø°ÝÇü)
+        SPECIAL              // ½ºÆä¼È(Áö¿øÇü)
     };
 
     public enum AttackRange
-    {       // ê³µê²© ë²”ìœ„
+    {       // °ø°Ý ¹üÀ§
         None = -1,
 
-        FRONT,               // ì „ë°©
-        REAR                 // í›„ë°©
+        FRONT,               // Àü¹æ
+        REAR                 // ÈÄ¹æ
     };
 
     public enum CombatPosition
-    {    // ì „íˆ¬ ìœ„ì¹˜
+    {    // ÀüÅõ À§Ä¡
         None = -1,
 
-        FRONT_LINE,          // ì „ì—´
-        MIDDLE_LINE,         // ì¤‘ì—´
-        BACK_LINE            // í›„ì—´
+        FRONT_LINE,          // Àü¿­
+        MIDDLE_LINE,         // Áß¿­
+        BACK_LINE            // ÈÄ¿­
     };
 
 
@@ -93,9 +93,9 @@ namespace EnumDefine
 
         Rare,
 
-        Epic, // ë³´ë¼ìƒ‰
+        Epic, // º¸¶ó»ö
 
-        Legendary, // ì „ì„¤ 
+        Legendary, // Àü¼³ 
 
         Max,
     }

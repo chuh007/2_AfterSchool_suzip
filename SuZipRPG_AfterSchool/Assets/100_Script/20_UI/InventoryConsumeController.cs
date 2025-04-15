@@ -1,4 +1,4 @@
-ï»¿using ClassDefine;
+using ClassDefine;
 using UnityEngine;
 
 public class InventoryConsumeController : MonoBehaviour, IUI
@@ -16,11 +16,11 @@ public class InventoryConsumeController : MonoBehaviour, IUI
 
         ButtonControllerArray[0].SetButtonAction(() =>
         {
-            Log.Message("íšë“ ìž¥ì†Œ UI ì¶œë ¥", LogCategory.InventoryConsume);
+            Log.Message("È¹µæ Àå¼Ò UI Ãâ·Â", LogCategory.InventoryConsume);
         });
         ButtonControllerArray[1].SetButtonAction(() =>
         {
-            Log.Message("ì—´ê¸° ë²„íŠ¼ ì¶œë ¥", LogCategory.InventoryConsume);
+            Log.Message("¿­±â ¹öÆ° Ãâ·Â", LogCategory.InventoryConsume);
         });
 
         Open();
@@ -45,7 +45,7 @@ public class InventoryConsumeController : MonoBehaviour, IUI
         TextViewArray[0].SetText(tempTargetItem.Name);
         TextViewArray[1].SetText(tempTargetItem.Description);
 
-        string countText = $"ë³´ìœ  ìˆ˜ëŸ‰\nx{tempTargetItem.Count}";
+        string countText = $"º¸À¯ ¼ö·®\nx{tempTargetItem.Count}";
         TextViewArray[2].SetText(countText);
     }
 }
