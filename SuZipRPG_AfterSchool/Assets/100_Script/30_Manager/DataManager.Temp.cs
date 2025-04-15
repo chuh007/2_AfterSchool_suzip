@@ -22,7 +22,7 @@ public partial class DataManager : MonoBehaviour
 
         List<StudentLevelStatusInfo> tempStudentLevelStatusList = new List<StudentLevelStatusInfo>();
 
-        // ÀÓ½Ã·Î, ·¹º§ 1´ç ¸ğµç ½ºÅİ°ú °æÇèÄ¡ ¿ä±¸·®ÀÌ 1¾¿ Áõ°¡ÇÑ´Ù°í °¡Á¤
+        // ì„ì‹œë¡œ, ë ˆë²¨ 1ë‹¹ ëª¨ë“  ìŠ¤í…Ÿê³¼ ê²½í—˜ì¹˜ ìš”êµ¬ëŸ‰ì´ 1ì”© ì¦ê°€í•œë‹¤ê³  ê°€ì •
         for (int i = 0; i < 5; i++)
         {
 
@@ -48,8 +48,8 @@ public partial class DataManager : MonoBehaviour
     {
         ID = 1001,
         ConsumeType = ConsumeType.Unusable,
-        Name = "ÇĞ»ı ¸ğÁı Æ¼ÄÏ",
-        Description = "ÇĞ»ı ¸ğÁı¿¡ »ç¿ëÇÒ ¼ö ÀÖ´Â Æ¼ÄÏÀÔ´Ï´Ù.",
+        Name = "í•™ìƒ ëª¨ì§‘ í‹°ì¼“",
+        Description = "í•™ìƒ ëª¨ì§‘ì— ì‚¬ìš©í•  ìˆ˜ ìˆëŠ” í‹°ì¼“ì…ë‹ˆë‹¤.",
         Count = 10,
         Grade = ItemGrade.Common
     },
@@ -58,8 +58,8 @@ public partial class DataManager : MonoBehaviour
     {
         ID = 1002,
         ConsumeType = ConsumeType.Select,
-        Name = "¼±ÅÃÇü ÇĞ»ı ¸ğÁı Æ¼ÄÏ",
-        Description = "Æ¯Á¤ ÇĞ±³ÀÇ ÇĞ»ıÀ» ¸ğÁıÇÒ ¼ö ÀÖ´Â Æ¼ÄÏÀÔ´Ï´Ù.",
+        Name = "ì„ íƒí˜• í•™ìƒ ëª¨ì§‘ í‹°ì¼“",
+        Description = "íŠ¹ì • í•™êµì˜ í•™ìƒì„ ëª¨ì§‘í•  ìˆ˜ ìˆëŠ” í‹°ì¼“ì…ë‹ˆë‹¤.",
         Count = 1,
         Grade = ItemGrade.Rare
     },
@@ -68,8 +68,8 @@ public partial class DataManager : MonoBehaviour
     {
         ID = 1003,
         ConsumeType = ConsumeType.Random,
-        Name = "ºñ¹Ğ ±â¼ú ³ëÆ®",
-        Description = "·£´ıÇÑ ÇĞ»ıÀÇ ½ºÅ³À» °­È­ÇÒ ¼ö ÀÖ´Â ³ëÆ®ÀÔ´Ï´Ù.",
+        Name = "ë¹„ë°€ ê¸°ìˆ  ë…¸íŠ¸",
+        Description = "ëœë¤í•œ í•™ìƒì˜ ìŠ¤í‚¬ì„ ê°•í™”í•  ìˆ˜ ìˆëŠ” ë…¸íŠ¸ì…ë‹ˆë‹¤.",
         Count = 3,
         Grade = ItemGrade.Epic
     },
@@ -78,8 +78,8 @@ public partial class DataManager : MonoBehaviour
     {
         ID = 1004,
         ConsumeType = ConsumeType.Unusable,
-        Name = "Á¤È­µÈ »şÀÌ´Ï",
-        Description = "ÇĞ»ıÀÇ ·¹º§À» Áï½Ã ¿Ã·ÁÁÖ´Â Èñ±ÍÇÑ Àç·áÀÔ´Ï´Ù.",
+        Name = "ì •í™”ëœ ìƒ¤ì´ë‹ˆ",
+        Description = "í•™ìƒì˜ ë ˆë²¨ì„ ì¦‰ì‹œ ì˜¬ë ¤ì£¼ëŠ” í¬ê·€í•œ ì¬ë£Œì…ë‹ˆë‹¤.",
         Count = 2,
         Grade = ItemGrade.Legendary
     },
@@ -88,8 +88,8 @@ public partial class DataManager : MonoBehaviour
     {
         ID = 1005,
         ConsumeType = ConsumeType.Select,
-        Name = "Æ¯¼ö ÀÛÀü Áö·É¼­",
-        Description = "Æ¯Á¤ ³­ÀÌµµÀÇ Æ¯¼ö ÀÛÀü¿¡ Âü¿©ÇÒ ¼ö ÀÖ´Â Áö·É¼­ÀÔ´Ï´Ù.",
+        Name = "íŠ¹ìˆ˜ ì‘ì „ ì§€ë ¹ì„œ",
+        Description = "íŠ¹ì • ë‚œì´ë„ì˜ íŠ¹ìˆ˜ ì‘ì „ì— ì°¸ì—¬í•  ìˆ˜ ìˆëŠ” ì§€ë ¹ì„œì…ë‹ˆë‹¤.",
         Count = 5,
         Grade = ItemGrade.Rare
     },
@@ -98,8 +98,8 @@ public partial class DataManager : MonoBehaviour
     {
         ID = 1006,
         ConsumeType = ConsumeType.Random,
-        Name = "¹Ì½Ä Å¬·´ÀÇ µµ½Ã¶ô",
-        Description = "·£´ı ¹öÇÁ¸¦ Á¦°øÇÏ´Â µµ½Ã¶ôÀÔ´Ï´Ù.",
+        Name = "ë¯¸ì‹ í´ëŸ½ì˜ ë„ì‹œë½",
+        Description = "ëœë¤ ë²„í”„ë¥¼ ì œê³µí•˜ëŠ” ë„ì‹œë½ì…ë‹ˆë‹¤.",
         Count = 3,
         Grade = ItemGrade.Common
     },
@@ -108,8 +108,8 @@ public partial class DataManager : MonoBehaviour
     {
         ID = 1007,
         ConsumeType = ConsumeType.Unusable,
-        Name = "Å°º¸Åä½º ¿¬ÇÕ ÄÚÀÎ",
-        Description = "»óÁ¡¿¡¼­ Æ¯º°ÇÑ ¾ÆÀÌÅÛ°ú ±³È¯ÇÒ ¼ö ÀÖ´Â ÄÚÀÎÀÔ´Ï´Ù.",
+        Name = "í‚¤ë³´í† ìŠ¤ ì—°í•© ì½”ì¸",
+        Description = "ìƒì ì—ì„œ íŠ¹ë³„í•œ ì•„ì´í…œê³¼ êµí™˜í•  ìˆ˜ ìˆëŠ” ì½”ì¸ì…ë‹ˆë‹¤.",
         Count = 500,
         Grade = ItemGrade.Epic
     },
@@ -118,8 +118,8 @@ public partial class DataManager : MonoBehaviour
     {
         ID = 1008,
         ConsumeType = ConsumeType.Select,
-        Name = "¿¤¸®Æ® ÀÛÀü º¸°í¼­",
-        Description = "¿øÇÏ´Â ÇĞ»ıÀÇ °æÇèÄ¡¸¦ ´ëÆø »ó½Â½ÃÅ°´Â º¸°í¼­ÀÔ´Ï´Ù.",
+        Name = "ì—˜ë¦¬íŠ¸ ì‘ì „ ë³´ê³ ì„œ",
+        Description = "ì›í•˜ëŠ” í•™ìƒì˜ ê²½í—˜ì¹˜ë¥¼ ëŒ€í­ ìƒìŠ¹ì‹œí‚¤ëŠ” ë³´ê³ ì„œì…ë‹ˆë‹¤.",
         Count = 1,
         Grade = ItemGrade.Legendary
     },
@@ -128,8 +128,8 @@ public partial class DataManager : MonoBehaviour
     {
         ID = 1009,
         ConsumeType = ConsumeType.Random,
-        Name = "ÃÑÇĞ»ıÈ¸ ±ä±Ş ÆĞÅ°Áö",
-        Description = "´Ù¾çÇÑ ¹°ÀÚ°¡ ·£´ıÀ¸·Î Æ÷ÇÔµÈ ±ä±Ş Áö¿ø ÆĞÅ°ÁöÀÔ´Ï´Ù.",
+        Name = "ì´í•™ìƒíšŒ ê¸´ê¸‰ íŒ¨í‚¤ì§€",
+        Description = "ë‹¤ì–‘í•œ ë¬¼ìê°€ ëœë¤ìœ¼ë¡œ í¬í•¨ëœ ê¸´ê¸‰ ì§€ì› íŒ¨í‚¤ì§€ì…ë‹ˆë‹¤.",
         Count = 2,
         Grade = ItemGrade.Epic
     },
@@ -138,8 +138,8 @@ public partial class DataManager : MonoBehaviour
     {
         ID = 1010,
         ConsumeType = ConsumeType.Unusable,
-        Name = "AP È¸º¹ À½·á",
-        Description = "Çàµ¿·ÂÀ» 120¸¸Å­ È¸º¹½ÃÄÑÁÖ´Â À½·áÀÔ´Ï´Ù.",
+        Name = "AP íšŒë³µ ìŒë£Œ",
+        Description = "í–‰ë™ë ¥ì„ 120ë§Œí¼ íšŒë³µì‹œì¼œì£¼ëŠ” ìŒë£Œì…ë‹ˆë‹¤.",
         Count = 15,
         Grade = ItemGrade.Common
     }

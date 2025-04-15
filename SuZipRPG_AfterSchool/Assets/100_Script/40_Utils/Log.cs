@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Log
 {
-    //Log.Message("·Î±×");
+    //Log.Message("ë¡œê·¸");
 
     public static void Message(string message, LogCategory logCategory)
     {
